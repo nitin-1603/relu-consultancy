@@ -7,8 +7,14 @@ import { BsWalletFill } from 'react-icons/bs'
 import subscriptionIcon from '../imagesAndIcons/favorite/favorite.jpg'
 import myProfile from '../imagesAndIcons/profile/profile.jpg'
 import { AiOutlineSetting } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom';
 
 const LeftAside = () => {
+  const navigate = useNavigate();
+
+  const login = ()=>{
+    navigate('/login');
+  }
   return (
     <>
       <div className="leftAside position-fixed top-25 start-0">
@@ -60,7 +66,7 @@ const LeftAside = () => {
 
         <div className="bg-white mt-5 mb-4 py-2">
           <BiLogOutCircle className='mx-2 bg-white' />
-          <button className="button-decoration bg-white">Logout</button>
+          <button onClick={login} className="button-decoration bg-white">Login</button>
         </div>
 
       </div>
