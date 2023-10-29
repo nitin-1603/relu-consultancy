@@ -1,0 +1,96 @@
+* {
+  background-color: rgb(234, 234, 234);
+}
+
+/* css for layout component */
+.layoutComponent {
+  width: 98% !important;
+  margin: auto!important;
+}
+
+/* css for navbar */
+.logo-customClass{
+  width: 20vw !important;
+  /* margin-right: 1rem !important; */
+  margin-left: 1rem !important;
+
+}
+.searchbar-customClass{
+  width: 50vw !important;
+  margin-right: 1.3rem !important;
+  margin-left: 1.3rem !important;
+}
+.becomeSeller-customClass{
+  width : 20vw !important;
+  /* margin-right: 1rem !important; */
+  /* margin-left: 1rem !important; */
+}
+.navbar-customClass{
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* css for leftAside component */
+.leftAside{
+  
+  width: 20vw !important;
+  border-radius: 8px !important;
+  background-color: white !important;
+  margin-top: 3rem !important;
+  margin-left: 1rem !important;
+  box-shadow: 0px 0.4px 0.4px 0.4px rgb(180, 179, 179);
+}
+ 
+.leftAside >  * {
+  border-radius: 8px !important;
+  cursor: pointer;
+}
+
+.button-decoration{
+  border: none !important;
+}
+
+/* css for MainSection */
+.card-customClass{
+  width : 50vw !important;
+  margin-top: 3rem !important;
+  /* border-radius: 10px !important; */
+}
+
+/* css for rightside bar */
+.rightSide-customClass{
+  width: 20vw !important;
+  border-radius: 8px !important;
+  background-color: white !important;
+  margin-top: 3rem !important;
+  margin-right: 1.3rem !important;
+  box-shadow: 0px 0.4px 0.4px 0.4px rgb(180, 179, 179);
+}
+
+.rightSide-customClass > * {
+  width: 20vw !important;
+  border-radius: 8px !important;
+}
+
+.rightSideBarClass{
+  background-image: url("./components/imagesAndIcons/pexels-ekaterina-12203460/pexels-ekaterina-12203460.jpg");
+  height: 5rem !important;
+  width: 20vw !important;
+  border-radius: 8px !important;
+}
+.pexelsgenaroCustomClass{
+  background-image: url("./components/imagesAndIcons/pexels-genaro-servín-763210/pexels-genaro-servín-763210.jpg");
+  height: 5rem !important;
+  width: 20vw !important;
+  border-radius: 8px !important;
+}
+.pexelsantoniBarClass{
+  background-image: url("./components/imagesAndIcons/pexels-pixabay-164455/pexels-pixabay-164455.jpg");
+  height: 5rem !important;
+  width: 20vw !important;
+  border-radius: 8px !important;
+}
+
