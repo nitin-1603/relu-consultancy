@@ -16,7 +16,7 @@ const Navbar = () => {
                             <li className="nav-item searchbar-customClass">
                                 <div className="d-flex  border rounded bg-white">
                                     <input type="search" className="nav-link border-0 py-2 mx-1 text-dark bg-white" placeholder="search..." name="" id="" />
-                                    <button className="ms-auto border-0 mx-1 bg-white "><BsFilterRight className='bg-white' /> Filter</button>
+                                    <button className="ms-auto border-0 mx-1 bg-white "><BsFilterRight className=' bg-white' /> Filter</button>
                                 </div>
                             </li>
                         </div>
