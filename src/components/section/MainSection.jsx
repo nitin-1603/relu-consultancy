@@ -12,7 +12,7 @@ import image39 from '../imagesAndIcons/Image 39/Image 39.jpg'
 
 const MainSection = () => {
     return (
-        <div className="position-absolute top-25 start-25">
+        <div className="container main-container">                  { /* position-absolute top-25 start-258*/}
             <div className="card card-customClass " style={{ width: "12rem" }} >
 
                 <div className="card-body d-flex bg-white rounded">
@@ -45,7 +45,7 @@ const MainSection = () => {
 
                 <div className="card-body d-flex bg-white rounded">
                     <div className='d-flex bg-white'>
-                        <img  src={pexelsImad} alt="" />
+                        <img src={pexelsImad} alt="" />
                         <div className='bg-white'>
                             <p className='bg-white ms-2 my-0'>Thomas J.</p>
                             <p className='bg-white ms-2 my-0'>@thecustomcreater</p>
@@ -70,29 +70,43 @@ const MainSection = () => {
             </div>
 
             {/*  */}
-            <div className='d-flex bg-white mt-3 mb-3 rounded '>
-                <div className="card bg-white border-0 m-2" style={{width: "13rem"}}>
-                    <img src={image40} className="card-img-top bg-white h-50" alt="..."/>
-                        <div className=" bg-white">
-                            <p className="bg-white">Modern wall decor painting</p>
-                            <div className="d-flex bg-white"> 
-                            <span className=" bg-white">$199  </span>
-                            <span className="ms-auto bg-white"><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /></span>
-                            </div>
-                        </div>
-                </div>
 
-                <div className="card bg-white border-0 m-2" style={{width: "13rem"}}>
-                    <img src={image39} className="card-img-top bg-white h-50" alt="..."/>
+            <div className="card card-customClass" style={{ width: "12rem" }} >
+                <div className='d-flex bg-white mt-3 mb-3 rounded '>
+                    <div className="card bg-white border-0 m-2" style={{ width: "13rem" }}>
+                        <img src={image40} className="card-img-top bg-white h-50" alt="..." />
                         <div className=" bg-white">
                             <p className="bg-white">Modern wall decor painting</p>
-                            <div className="d-flex bg-white"> 
-                            <span className=" bg-white">$199  </span>
-                            <span className="ms-auto bg-white"><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /></span>
+                            <div className="d-flex bg-white">
+                                <span className=" bg-white">$199  </span>
+                                <span className="ms-auto bg-white"><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /></span>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="card bg-white border-0 m-2" style={{ width: "13rem" }}>
+                        <img src={image39} className="card-img-top bg-white h-50" alt="..." />
+                        <div className=" bg-white">
+                            <p className="bg-white">Modern wall decor painting</p>
+                            <div className="d-flex bg-white">
+                                <span className=" bg-white">$199  </span>
+                                <span className="ms-auto bg-white"><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card bg-white border-0 m-2" style={{ width: "13rem" }}>
+                        <img src={image39} className="card-img-top bg-white h-50" alt="..." />
+                        <div className=" bg-white">
+                            <p className="bg-white">Modern wall decor painting</p>
+                            <div className="d-flex bg-white">
+                                <span className=" bg-white">$199  </span>
+                                <span className="ms-auto bg-white"><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /><img src={star} alt="" /></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     )
 }

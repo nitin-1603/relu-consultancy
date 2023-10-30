@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { toast } from 'react-toastify';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/Firebase';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,15 +20,15 @@ const Login = () => {
     const login = async () => {
         try {
             const userDetails = await signInWithEmailAndPassword(auth, email, password);
-            localStorage.setItem('user', JSON.stringify(userDetails)
-            )
-            // toast.success("successfully login")
+            localStorage.setItem('user', JSON.stringify(userDetails))
+            console.log(userDetails)
+            toast.success("successfully login")
             setEmail('')
             setPassword('')
             navigate('/') // here navigate is used for when we loged in navigate forward us to home page
         } catch (error) {
             console.log(error);
-            // toast.error('email and password did not match')
+            toast.error('email and password did not match')
             setEmail('')
             setPassword('')
         }
@@ -46,15 +46,16 @@ const Login = () => {
                                 <form>
 
                                     <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">Email</label>
-                                        <input value={email}
+                                        {/* <label htmlFor="email" className="form-label">Email</label> */}
+                                        <input type="email" value={email}
                                             onChange={(e) => setEmail(e.target.value)}
-                                            name='email' type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                            name='email' className="form-control" id="email" placeholder="Enter your email" />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="password" className="form-label">Password</label>
-                                        <input value={password}
-                                            onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="password" placeholder="Enter your password" />
+                                        {/* <label htmlFor="password" className="form-label">Password</label> */}
+                                        <input type={type} value={password}
+                                            onChange={(e) => setPassword(e.target.value)} className="form-control" id="password" placeholder="Enter your password" />
+
                                     </div>
                                     {/* checkbox for show and hide password */}
                                     <div className=" mb-4">
@@ -71,6 +72,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

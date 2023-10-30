@@ -2,39 +2,50 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, fireDB } from '../firebase/Firebase';
 import { Timestamp, addDoc, collection } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [type, setType] = useState("password");
+    const [hidepassword, setHidepassword] = useState("Show Password");
+
+    
+
+    const showPwrd = () => {
+        type === "password" ? (setType('text'), setHidepassword('Hide Password')) : (setType("password"), setHidepassword('Show Password'))
+    }
 
     const signup = async () => {
 
         if (name === "" || email === "" || password === "") {
-            alert('All fields are required')
+            return toast.error("All fields are required")
         }
 
         try {
-            const userS = await createUserWithEmailAndPassword(auth, email, password);
-            // console.log(users) 
+            const userN = await createUserWithEmailAndPassword(auth, email, password);
+
+            console.log(userN) 
 
             const user = {
                 name: name,
-                uid: userS.user.uid,
-                email: userS.user.email,
+                uid: userN.user.uid,
+                email: userN.user.email,
                 time: Timestamp.now()
             }
-            const userRef = collection(fireDB, "userS")
+            const userRef = collection(fireDB, "userN")
             await addDoc(userRef, user);
-            console.log(user)
-            alert("Signup successfully done");
+            // console.log(user)
             setName("");
             setEmail("");
             setPassword("");
+            toast.success("Signup Succesfully")
 
         } catch (error) {
             console.log(error)
-            alert('username and password incorrect')
+            toast.error("Email already Registered ")
             setTimeout(() => {
                 window.location.href = '/login'
             }, 2500);
@@ -50,23 +61,31 @@ const Signup = () => {
                             <div className="card-body">
                                 <form>
                                     <div className="mb-3">
-                                        <label htmlFor="name" className="form-label">Name</label>
-                                        <input value={name}
+                                        {/* <label htmlFor="name" className="form-label">Name</label> */}
+                                        <input type="text" value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            name='name' type="text" className="form-control" id="name" placeholder="Enter your name" />
+                                            name='name'  className="form-control" id="name" placeholder="Enter your name" />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="email" className="form-label">Email</label>
-                                        <input value={email}
+                                        {/* <label htmlFor="email" className="form-label">Email</label> */}
+                                        <input  type="email" value={email}
                                             onChange={(e) => setEmail(e.target.value)}
-                                            name='email' type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                            name='email' className="form-control" id="email" placeholder="Enter your email" />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="password" className="form-label">Password</label>
-                                        <input value={password}
-                                            onChange={(e) => setPassword(e.target.value)} name='password' type="password" className="form-control" id="password" placeholder="Enter your password" />
+                                        {/* <label htmlFor="password" className="form-label">Password</label> */}
+                                        <input type={type} value={password}
+                                            onChange={(e) => setPassword(e.target.value)} name='password'  className="form-control" id="password" placeholder="Enter your password" />
+                                    </div>
+                                    {/* checkbox for show and hide password */}
+                                    <div className=" mb-4">
+                                        <input type="checkbox" onClick={showPwrd} id="default-checkbox"  value="" className=" " />
+                                        <label htmlFor="default-checkbox" className="ms-3">{hidepassword}</label>
                                     </div>
                                     <button onClick={signup} type="submit" className="btn btn-primary">Sign Up</button>
+                                    <div>
+                                        <h5 className='text-dark'>if you have already account <Link className='text-danger' to={'/login'}>Login</Link></h5>
+                                    </div>
                                 </form>
                             </div>
                         </div>

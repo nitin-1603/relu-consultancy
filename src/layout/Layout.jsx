@@ -7,12 +7,14 @@ import RightAside from "../components/rightAside/RightAside"
 const Layout = () => {
     return (
         <>
+
+
             <div className="layoutComponent">
                 <Navbar />
-                <div className="d-flex mt-3 justify-content-around ">
+                <div className="d-flex  justify-content-around ">
                     <LeftAside />
                     <MainSection />
-                    <RightAside/>
+                    <RightAside />
                 </div>
             </div>
 
